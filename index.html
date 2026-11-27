@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentinela · Monitoramento de rede e APIs</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <path id="bradesco" d="M34.6,9.8a6.2,6.2,0,0,0-2.6.6V4.1a11.8,11.8,0,0,0-2.9,1.6A1.6,1.6,0,0,0,28.5,7V22.4a13.9,13.9,0,0,0,4.6.7c4.6,0,7.2-2.8,7.2-6.8S38.5,9.8,34.6,9.8ZM33.3,20.3a3.2,3.2,0,0,1-1.3-.2v-7a5.4,5.4,0,0,1,2-.4c1.8,0,2.7,1.2,2.7,3.5S35.6,20.3,33.3,20.3ZM11.6,16.4l-1.4.8c-.2.1-.2.2-.2.4v5.1c0,.2.1.3.2.3h1.4V16.4ZM49.2,9.9a4.2,4.2,0,0,0-3.5,1.8,12.4,12.4,0,0,0-.4-1.6l-1.4-.2-1.4.2V22.8a4.4,4.4,0,0,0,1.7.2l1.8-.2V16.6c0-2.5,1.3-3.8,3-3.8h1.2a8.8,8.8,0,0,0,0-2.8Zm-35,5-1.8,1h-.1v6.9h2a.4.4,0,0,0,.4-.4V15.2A.3.3,0,0,0,14.2,14.9Zm-2.8-10A22.5,22.5,0,0,0,7,5.3a8.2,8.2,0,0,1,6.6-3.2A9,9,0,0,1,19,3.9c.2.2.4.3.6.1a.4.4,0,0,0,0-.6A9.3,9.3,0,0,0,12.2,0,9.5,9.5,0,0,0,3.5,6.1L.3,7.4q-.4.3-.3.6a.4.4,0,0,0,.6.2,18.3,18.3,0,0,1,2.5-.6A6.1,6.1,0,0,0,3,9a9.3,9.3,0,0,0,4.3,8c.2.1.5.1.6-.1s.1-.4-.1-.6a7.9,7.9,0,0,1-2.6-6,6.4,6.4,0,0,1,.7-3.1L8.7,7c6.8,0,12.6,2.3,12.6,5.2s-1.9,3-4.2,4c-.5.2-.5.4-.5.6s.3.3.6.2c4-1.2,6.9-3.4,6.9-5.9S18.5,4.9,11.4,4.9ZM71.3,7v3l-1.8-.2c-3.9,0-6.5,2.6-6.5,6.8s2.5,6.5,6.5,6.5a15.1,15.1,0,0,0,5.3-.8V4.1a11.8,11.8,0,0,0-2.9,1.6A1.4,1.4,0,0,0,71.3,7Zm0,13.1a4.1,4.1,0,0,1-1.5.2c-2.3,0-3.2-1.5-3.2-3.7s.9-4,3.2-4l1.5.2Zm35.8.2c-1.7,0-2.9-1.4-2.9-3.8s1-3.8,2.9-3.8a5.9,5.9,0,0,1,2.3.4,6,6,0,0,1,1.2-2.4,7.5,7.5,0,0,0-3.9-.9c-3.9,0-6.1,2.7-6.1,6.7s2.3,6.6,6.2,6.6a8,8,0,0,0,3.9-.8,9.7,9.7,0,0,1-1.4-2.5A4.7,4.7,0,0,1,107.1,20.3ZM55.7,9.8a15.3,15.3,0,0,0-3.8.4,6.6,6.6,0,0,0,0,2.8,10.6,10.6,0,0,1,3.2-.4c1.8,0,2.7.7,2.7,2.2V15l-1.7-.2c-2.9,0-5.5,1.1-5.5,4s2.3,4.3,5.7,4.3a19.9,19.9,0,0,0,4.8-.7V15.1C61.1,11.6,59.2,9.9,55.7,9.8Zm2.1,10.5H56.3c-1.6,0-2.5-.5-2.5-1.6s.9-1.6,2.5-1.6h1.5ZM116.9,9.8c-3.9,0-6.1,2.7-6.1,6.7s2.3,6.6,6.1,6.6,6.1-2.6,6.1-6.6S120.8,9.8,116.9,9.8Zm0,10.5c-2,0-2.5-1.6-2.5-3.8s.5-3.9,2.5-3.9,2.6,1.6,2.6,3.9S118.8,20.3,116.9,20.3ZM82.8,9.8c-3.7,0-6,2.5-6,6.7s2.4,6.6,6.6,6.6a9.9,9.9,0,0,0,4-.7,6.2,6.2,0,0,0,0-2.7,11.8,11.8,0,0,1-3.6.6c-2,0-3.3-.8-3.6-2.8h7.9a9.9,9.9,0,0,0,.2-1.8C88.3,11.9,86.1,9.8,82.8,9.8Zm-2.6,5.1a2.5,2.5,0,0,1,2.6-2.4c1.6,0,2.2,1,2.2,2.4Zm16.1.4-1.5-.6c-.8-.4-1.2-.6-1.2-1.2s.7-1,1.6-1a11,11,0,0,1,3.3.6,5.7,5.7,0,0,0,0-2.6,8.3,8.3,0,0,0-3.8-.7C92,9.8,90,11.2,90,13.4s.8,3,3.2,4l1.1.4c1,.4,1.3.7,1.3,1.4s-1,1.1-1.8,1.1a9.9,9.9,0,0,1-3.8-.7,4.2,4.2,0,0,0,0,2.7,9.4,9.4,0,0,0,4.3.8c2.7,0,4.9-1.4,4.9-3.9S98.3,16.1,96.3,15.3Z" />
+    </defs>
+  </svg>
+
+  <aside class="side">
+
+    <div class="side-logo">
+      <svg viewBox="0 0 27.5 23.1" role="img" aria-label="Bradesco">
+        <use href="#bradesco" />
+      </svg>
+    </div>
+
+    <nav>
+      <a class="on" data-view="painel">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" /></svg>
+        <span>Painel</span>
+      </a>
+      <a data-view="incidentes">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4" /></svg>
+        <span>Incidentes</span>
+        <em id="badgeInc" class="badge" hidden>0</em>
+      </a>
+      <a data-view="auditoria">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M9 4h6v3H9zM7 5H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2M8 12h8M8 16h5" /></svg>
+        <span>Auditoria</span>
+      </a>
+      <a data-view="acesso">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" /></svg>
+        <span>Acesso</span>
+      </a>
+      <a data-view="sobre">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 8h.01M11 12h1v5h1" /></svg>
+        <span>Sobre</span>
+      </a>
+    </nav>
+
+  </aside>
+
+  <div class="conteudo">
+
+    <header class="topbar">
+      <svg class="logo-full" viewBox="0 0 123 23.1" role="img" aria-label="Bradesco">
+        <use href="#bradesco" />
+      </svg>
+      <span class="topbar-titulo">Sentinela · rede e APIs bancárias</span>
+
+      <div class="topbar-acoes">
+        <span class="selo">Dados simulados</span>
+        <span class="live"></span>
+        <span class="topbar-live">Ao vivo</span>
+
+        <label class="perfil">Perfil
+          <select id="perfil">
+            <option value="analista">Analista SRE</option>
+            <option value="gestor">Gestor</option>
+            <option value="auditor">Auditor</option>
+          </select>
+        </label>
+        <span class="avatar" id="avatar">AN</span>
+      </div>
+    </header>
+
+    <main>
+
+      <section id="view-painel" class="view on">
+        <h1>Painel de monitoramento</h1>
+
+        <div class="toolbar">
+          <button id="btnPausar" class="btn btn-contorno">Pausar</button>
+          <button id="btnFalha" class="btn btn-cinza">Simular falha técnica</button>
+          <button id="btnAtaque" class="btn">Simular ataque</button>
+        </div>
+
+        <section class="stats">
+          <article class="kpi">
+            <h3>Latência das APIs</h3>
+            <div class="kpi-valor" id="sLat">0</div>
+            <div class="kpi-un">ms</div>
+            <small id="sLatSub"></small>
+          </article>
+
+          <article class="kpi">
+            <h3>Tráfego de rede</h3>
+            <div class="kpi-valor" id="sTrafego">0</div>
+            <div class="kpi-un">Mbps</div>
+            <small id="sTrafegoSub"></small>
+          </article>
+
+          <article class="kpi">
+            <h3>Acessos fora do padrão</h3>
+            <div class="kpi-valor" id="sAnom">0</div>
+            <div class="kpi-un">%</div>
+            <small id="sAnomSub"></small>
+          </article>
+
+          <article class="kpi">
+            <h3>Incidentes abertos</h3>
+            <div class="kpi-valor" id="sInc">0</div>
+            <div class="kpi-un">abertos</div>
+            <small id="sIncSub"></small>
+          </article>
+        </section>
+
+        <section class="grid iguais">
+          <div class="panel">
+            <h2>APIs · latência</h2>
+            <canvas id="chartApi"></canvas>
+            <div class="legend">
+              <span><i class="l1"></i>Média</span>
+              <span><i class="l2"></i>Pior serviço</span>
+              <span><i class="l3"></i>Acima de 800 ms</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>Rede · acessos fora do padrão</h2>
+            <canvas id="chartRede"></canvas>
+            <div class="legend">
+              <span><i class="l1"></i>Média</span>
+              <span><i class="l2"></i>Pior segmento</span>
+              <span><i class="l3"></i>Acima de 30%</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="panel">
+            <h2>Serviços de API</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Serviço</th>
+                  <th>Latência</th>
+                  <th>Req/min</th>
+                  <th>Erros</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="rows"></tbody>
+            </table>
+          </div>
+
+          <div class="panel">
+            <h2>Sinais de rede</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Segmento</th>
+                  <th>Tráfego</th>
+                  <th>Fora do padrão</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="rowsRede"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section id="view-incidentes" class="view">
+        <h1>Incidentes</h1>
+        <p class="lead">Risco baixo é executado automaticamente. Risco médio e alto precisam de aprovação humana.</p>
+        <div id="listaIncidentes" class="inc-lista"></div>
+      </section>
+
+      <section id="view-auditoria" class="view">
+        <h1>Auditoria</h1>
+        <p class="lead">Registro de cada evento, decisão, autorização e resultado.</p>
+        <div class="panel">
+          <table>
+            <thead>
+              <tr>
+                <th>Horário</th>
+                <th>Incidente</th>
+                <th>Evento</th>
+                <th>Decisão</th>
+                <th>Autorização</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody id="linhasAuditoria"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="view-acesso" class="view">
+        <h1>Controle de acesso</h1>
+        <p class="lead">O perfil selecionado no topo define quem pode aprovar cada nível de risco. Risco baixo é executado pelo sistema.</p>
+        <div class="panel">
+          <table>
+            <thead>
+              <tr>
+                <th>Perfil</th>
+                <th>Responsabilidade</th>
+                <th>Aprova risco médio</th>
+                <th>Aprova risco alto</th>
+              </tr>
+            </thead>
+            <tbody id="linhasAcesso"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="view-sobre" class="view">
+        <h1>Sobre o Sentinela</h1>
+        <p class="lead">Conheça para quem o sistema foi criado e o que ele é capaz de fazer.</p>
+
+        <div class="panel">
+          <h2>Público-alvo</h2>
+          <p class="texto">
+            Equipes de Segurança da Informação, SRE e plataforma de APIs do Bradesco (analistas de SOC e gestores)
+            que mantêm no ar a rede e as APIs dos canais digitais, como app, Internet Banking e Pix.
+          </p>
+        </div>
+
+        <div class="sobre-duas">
+          <div class="panel">
+            <h2>Dores e necessidades</h2>
+            <ul class="lista">
+              <li>Sinais de rede e de APIs espalhados em ferramentas diferentes</li>
+              <li>Muitos alertas isolados e correlação manual, que atrasam a resposta</li>
+              <li>Receio de automatizar e causar indisponibilidade em serviço crítico</li>
+              <li>Dificuldade de provar quem decidiu o quê em auditorias</li>
+            </ul>
+            <p class="destaque">Necessidade: detectar cedo, agir com segurança e rastrear tudo</p>
+          </div>
+
+          <div class="panel">
+            <h2>Objetivos e expectativas</h2>
+            <ul class="lista">
+              <li>Ver rede e APIs em um único painel</li>
+              <li>Reduzir o tempo entre evento, decisão e ação</li>
+              <li>Automatizar só o baixo risco e manter aprovação humana no resto</li>
+              <li>Histórico completo: evento, decisão, autorização e resultado</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Nome e descrição</h2>
+          <p class="texto">
+            <b>Sentinela:</b> painel web que monitora rede e APIs bancárias, identifica riscos e responde em camadas
+            de autonomia. Criado para as equipes de segurança e SRE do Bradesco.
+          </p>
+          <p class="texto">
+            No protótipo, demonstra um cenário completo com dados simulados: evento, decisão e ação.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h2>Funcionalidades principais</h2>
+          <div class="func-grid">
+            <article class="func">
+              <span class="func-num">1</span>
+              <h3>Correlação de sinais</h3>
+              <p>Junta eventos de rede e de APIs para detectar degradação ou ataque, sem alertas isolados.</p>
+            </article>
+
+            <article class="func">
+              <span class="func-num">2</span>
+              <h3>Autonomia em camadas</h3>
+              <p>Alertar, recomendar, pedir aprovação ou executar ação simulada de baixo risco.</p>
+            </article>
+
+            <article class="func">
+              <span class="func-num">3</span>
+              <h3>Perfis de acesso e auditoria</h3>
+              <p>Define quem visualiza, aprova ou executa e registra evento, decisão, autorização e resultado.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="./script/script.js"></script>
+</body>
+
+</html>
